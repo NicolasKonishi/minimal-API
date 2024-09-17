@@ -13,6 +13,20 @@ namespace minimal_API.Infraestrutura.DB
         }
 
         public DbSet<Adm> adms { get; set; } = default!;
+        public DbSet<Veiculo> veiculos { get; set; } = default!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Adm>().HasData(
+             new Adm
+             {
+                 Id = 1,
+                 Email= "Adm@teste.com",
+                 Senha= "123",
+                 Perfil= "Adm"
+             }
+                );
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
