@@ -7,7 +7,7 @@ namespace minimal_API.Dominio.Interfaces
     {
         Adm? Login(LoginDTO loginDTO);
 
-        Adm? Incluir(Adm adm);
+        Adm Incluir(Adm adm);
 
         Adm? BuscaPorId(int id);
 
