@@ -152,6 +152,8 @@ app.MapGet("/adms", ([FromQuery] int? pagina, IAdministradorServico administrado
             Perfil = adm.Perfil
         });
     }
+    return Results.Ok(adms);
+
 
 }).RequireAuthorization().RequireAuthorization(new AuthorizeAttribute { Roles = "Adm"}).WithTags("Administrador");
 
